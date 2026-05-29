@@ -23,7 +23,6 @@ export default function BlogForm({ initialData, mode }: Props) {
   const [form, setForm] = useState<BlogFormData>({
     title: '', slug: '', excerpt: '', content: '', coverImage: '',
     category: 'General', tags: '', status: 'draft', ...initialData,
-    tags: Array.isArray(initialData?.tags) ? (initialData.tags as unknown as string[]).join(', ') : (initialData?.tags ?? ''),
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');

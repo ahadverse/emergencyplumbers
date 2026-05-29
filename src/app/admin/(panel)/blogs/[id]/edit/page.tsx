@@ -26,7 +26,7 @@ export default async function EditBlogPage({ params }: { params: Promise<{ id: s
     content: String(p.content ?? ''),
     coverImage: String(p.coverImage ?? ''),
     category: String(p.category ?? ''),
-    tags: (p.tags as string[]) ?? [],
+    tags: ((p.tags as string[]) ?? []).join(', '),
     status: (p.status as 'draft' | 'published') ?? 'draft',
   };
 
