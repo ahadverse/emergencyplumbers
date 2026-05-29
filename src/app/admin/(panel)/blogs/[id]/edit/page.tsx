@@ -17,7 +17,7 @@ export default async function EditBlogPage({ params }: { params: Promise<{ id: s
   const post = await BlogPost.findById(id).lean();
   if (!post) notFound();
 
-  const p = post as Record<string, unknown>;
+  const p = post as unknown as Record<string, unknown>;
   const initialData = {
     _id: String(p._id),
     title: String(p.title ?? ''),
