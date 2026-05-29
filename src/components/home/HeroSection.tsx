@@ -10,12 +10,16 @@ const TRUST = [
   { icon: '✅', text: 'BBB Accredited' },
 ];
 
+const HERO_IMG = 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=75&fm=webp';
+
 export default function HeroSection() {
   return (
     <section id="hero">
+      {/* Preload LCP image */}
+      <link rel="preload" as="image" href={HERO_IMG} fetchPriority="high" />
       <div
         className="hero-bg"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fm=webp)' }}
+        style={{ backgroundImage: `url(${HERO_IMG})` }}
         role="img"
         aria-label="Licensed plumber working on pipes"
       />

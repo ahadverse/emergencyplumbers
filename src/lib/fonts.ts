@@ -2,14 +2,14 @@ import { Montserrat, Inter } from 'next/font/google';
 
 export const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800', '900'],
+  weight: ['700', '800', '900'],
   variable: '--font-montserrat',
   display: 'swap',
 });
 
 export const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600'],
   variable: '--font-inter',
   display: 'swap',
 });

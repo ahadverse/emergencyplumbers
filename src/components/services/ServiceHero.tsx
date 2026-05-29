@@ -27,6 +27,7 @@ const TRUST_BADGES = [
 export default function ServiceHero({ heroImageUrl, heroImageAlt, breadcrumbLabel, tag, title, sub, primaryCta, secondaryCta, trustPills }: Props) {
   return (
     <section className="service-hero">
+      <link rel="preload" as="image" href={heroImageUrl} fetchPriority="high" />
       <div className="service-hero-bg" style={{ backgroundImage: `url(${heroImageUrl})` }} role="img" aria-label={heroImageAlt} />
       <div className="service-hero-content">
 
