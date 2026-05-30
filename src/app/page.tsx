@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'PlumbingService',
+  '@type': 'Plumber',
   name: 'Emergency Plumbers Tennessee',
   url: 'https://emergencyplumbers.live',
   telephone: PHONE,
@@ -59,7 +59,7 @@ const localBusinessJsonLd = {
   priceRange: '$$',
   contactPoint: { '@type': 'ContactPoint', telephone: PHONE_HREF, contactType: 'customer service', availableLanguage: 'English' },
   description: 'Licensed plumbers for drain cleaning, pipe repair, water heater installation, and 24/7 emergency plumbing across Tennessee.',
-  areaServed: { '@type': 'State', name: 'Tennessee' },
+  areaServed: { '@type': 'State', name: 'Tennessee', sameAs: 'https://en.wikipedia.org/wiki/Tennessee' },
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.9',
