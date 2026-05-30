@@ -33,8 +33,8 @@ export default function HeroSection() {
 
         {/* Main headline */}
         <h1 className="hero-title">
-          24/7 Emergency Plumbing<br />
-          <span>Services Near You</span>
+          24/7 Emergency Plumbers<br />
+          <span>Across Tennessee</span>
         </h1>
 
         {/* Punchy tagline — no paragraph */}

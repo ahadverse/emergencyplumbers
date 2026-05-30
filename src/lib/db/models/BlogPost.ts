@@ -11,6 +11,9 @@ export interface IBlogPost extends Document {
   status: 'draft' | 'published';
   publishedAt?: Date;
   viewCount: number;
+  metaTitle?: string;
+  metaKeywords?: string;
+  metaDescription?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -27,6 +30,9 @@ const BlogPostSchema = new Schema<IBlogPost>(
     status: { type: String, enum: ['draft', 'published'], default: 'draft' },
     publishedAt: { type: Date },
     viewCount: { type: Number, default: 0 },
+    metaTitle: { type: String, default: '' },
+    metaKeywords: { type: String, default: '' },
+    metaDescription: { type: String, default: '' },
   },
   { timestamps: true }
 );

@@ -21,33 +21,29 @@ const OG_IMAGE =
   'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&h=630&fit=crop&q=80&fm=webp';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Plumber Nashville TN — Licensed & Available 24/7 | Emergency Plumbers' },
+  title: { absolute: 'Emergency Plumbers Tennessee | 24/7 Licensed Dispatch' },
   description:
-    'Licensed plumber in Nashville, TN serving Brentwood, Franklin, Murfreesboro, Spring Hill and all of Tennessee. Emergency plumbing, drain cleaning, pipe repair, water heater installation. Same-day service, upfront pricing, 1-year guarantee.',
+    'Licensed plumbers across Tennessee — Nashville, Knoxville, Chattanooga, Memphis suburbs and more. 24/7 emergency service, upfront pricing, 1-year guarantee. Call now.',
   keywords: [
-    'plumber nashville tn',
-    'emergency plumber nashville',
-    'plumber nashville',
-    'nashville plumber',
-    'drain cleaning nashville tn',
-    'water heater installation nashville tn',
-    'pipe repair nashville tn',
-    'burst pipe nashville tn',
+    'emergency plumber tennessee',
     'plumber tennessee',
-    'licensed plumber nashville',
-    '24/7 plumber nashville',
-    'plumber near me nashville',
+    '24/7 plumber tn',
+    'licensed plumber tennessee',
+    'emergency plumbing tennessee',
+    'drain cleaning tennessee',
+    'water heater tennessee',
+    'burst pipe tennessee',
   ],
   openGraph: {
-    title: 'Plumber Nashville TN — Licensed & Available 24/7 | Emergency Plumbers',
-    description: 'Licensed plumber serving Nashville, Brentwood, Franklin & all of Tennessee. Emergency plumbing, drain cleaning, water heaters. Same-day service.',
+    title: 'Emergency Plumbers Tennessee | 24/7 Licensed Dispatch',
+    description: 'Licensed plumbers serving 38+ cities across Tennessee. 24/7 emergency plumbing, drain cleaning, water heaters. Same-day service.',
     type: 'website',
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Licensed plumber at work' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Plumber Nashville TN — Licensed & Available 24/7',
-    description: 'Licensed plumbers in Nashville TN. Emergency, drain, pipe repair, water heaters. Same-day.',
+    title: 'Emergency Plumbers Tennessee | 24/7 Licensed Dispatch',
+    description: 'Licensed plumbers in Tennessee. Emergency, drain, pipe repair, water heaters. Same-day.',
     images: [OG_IMAGE],
   },
   alternates: { canonical: '/' },
@@ -55,14 +51,21 @@ export const metadata: Metadata = {
 
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Plumber',
-  name: 'Emergency Plumbers Plumbing',
+  '@type': 'PlumbingService',
+  name: 'Emergency Plumbers Tennessee',
   url: 'https://emergencyplumbers.live',
   telephone: PHONE,
+  image: 'https://emergencyplumbers.live/logo.png',
+  priceRange: '$$',
   contactPoint: { '@type': 'ContactPoint', telephone: PHONE_HREF, contactType: 'customer service', availableLanguage: 'English' },
-  description:
-    'Licensed master plumbers for drain cleaning, pipe repair, water heater installation, and 24/7 emergency plumbing across all 50 states.',
-  areaServed: { '@type': 'Country', name: 'United States' },
+  description: 'Licensed plumbers for drain cleaning, pipe repair, water heater installation, and 24/7 emergency plumbing across Tennessee.',
+  areaServed: { '@type': 'State', name: 'Tennessee' },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '1200',
+    bestRating: '5',
+  },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],

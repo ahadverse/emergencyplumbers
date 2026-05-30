@@ -7,6 +7,7 @@ const CATEGORIES = ['Drain Tips', 'Pipe Maintenance', 'Water Heater', 'Emergency
 interface BlogFormData {
   title: string; slug: string; excerpt: string; content: string;
   coverImage: string; category: string; tags: string; status: 'draft' | 'published';
+  metaTitle: string; metaKeywords: string; metaDescription: string;
 }
 
 interface Props {
@@ -22,7 +23,9 @@ export default function BlogForm({ initialData, mode }: Props) {
   const router = useRouter();
   const [form, setForm] = useState<BlogFormData>({
     title: '', slug: '', excerpt: '', content: '', coverImage: '',
-    category: 'General', tags: '', status: 'draft', ...initialData,
+    category: 'General', tags: '', status: 'draft',
+    metaTitle: '', metaKeywords: '', metaDescription: '',
+    ...initialData,
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -83,6 +86,21 @@ export default function BlogForm({ initialData, mode }: Props) {
           </select>
         </label>
       </div>
+      <fieldset style={{ border: '1px solid #e5e7eb', borderRadius: '8px', padding: '16px 20px', marginTop: '8px' }}>
+        <legend style={{ padding: '0 8px', fontWeight: 700, fontSize: '13px', color: '#6b7280' }}>SEO (optional)</legend>
+        <label>
+          Meta Title <span style={{ color: '#9ca3af', fontWeight: 400 }}>({form.metaTitle.length}/60) — leave blank to use post title</span>
+          <input value={form.metaTitle} onChange={set('metaTitle')} maxLength={60} placeholder="Leave blank to use post title" />
+        </label>
+        <label style={{ marginTop: '10px' }}>
+          Meta Keywords <span style={{ color: '#9ca3af', fontWeight: 400 }}>— comma-separated</span>
+          <input value={form.metaKeywords} onChange={set('metaKeywords')} placeholder="keyword1, keyword2, keyword3" />
+        </label>
+        <label style={{ marginTop: '10px' }}>
+          Meta Description <span style={{ color: '#9ca3af', fontWeight: 400 }}>({form.metaDescription.length}/160) — leave blank to use excerpt</span>
+          <textarea value={form.metaDescription} onChange={set('metaDescription')} rows={3} maxLength={160} placeholder="Leave blank to use excerpt" />
+        </label>
+      </fieldset>
       {error && <p className="admin-error">{error}</p>}
       <div style={{ display: 'flex', gap: '12px' }}>
         <button type="submit" className="admin-btn-primary" disabled={saving}>

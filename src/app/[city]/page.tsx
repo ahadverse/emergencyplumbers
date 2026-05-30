@@ -63,6 +63,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
     name: 'Emergency Plumbers',
     url: `https://emergencyplumbers.live/${slug}`,
     telephone: PHONE,
+    image: 'https://emergencyplumbers.live/logo.png',
+    priceRange: '$$',
     description: `Licensed plumber serving ${city.name}, ${city.stateAbbr} and surrounding areas of ${city.county}.`,
     areaServed: [
       { '@type': 'City', name: city.name, containedInPlace: { '@type': 'State', name: city.state } },
@@ -73,6 +75,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       opens: '00:00', closes: '23:59',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '1200',
+      bestRating: '5',
     },
   };
 

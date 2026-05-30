@@ -34,7 +34,13 @@ const organizationJsonLd = {
     hoursAvailable: 'Mo-Su 00:00-23:59',
   },
   logo: 'https://emergencyplumbers.live/favicon.ico',
-  areaServed: 'US',
+  areaServed: { '@type': 'State', name: 'Tennessee' },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '1200',
+    bestRating: '5',
+  },
   sameAs: [],
 };
 

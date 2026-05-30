@@ -13,6 +13,7 @@ import { PHONE, PHONE_HREF } from '@/lib/constants';
 interface Post {
   _id: string; title: string; slug: string; excerpt: string; content: string;
   coverImage?: string; category: string; tags: string[]; publishedAt?: string; viewCount: number;
+  metaTitle?: string; metaKeywords?: string; metaDescription?: string;
 }
 
 async function getPost(slug: string): Promise<Post | null> {
@@ -30,16 +31,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return { title: 'Not Found' };
+  const seoTitle = post.metaTitle || post.title;
+  const seoDescription = post.metaDescription || post.excerpt;
+  const seoKeywords = post.metaKeywords
+    ? post.metaKeywords.split(',').map(k => k.trim()).filter(Boolean)
+    : post.tags;
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: seoTitle,
+    description: seoDescription,
+    keywords: seoKeywords,
     openGraph: {
-      title: post.title, description: post.excerpt, type: 'article',
+      title: seoTitle, description: seoDescription, type: 'article',
       publishedTime: post.publishedAt,
-      images: post.coverImage ? [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }] : [],
+      images: post.coverImage ? [{ url: post.coverImage, width: 1200, height: 630, alt: seoTitle }] : [],
     },
     twitter: {
-      card: 'summary_large_image', title: post.title, description: post.excerpt,
+      card: 'summary_large_image', title: seoTitle, description: seoDescription,
       images: post.coverImage ? [post.coverImage] : [],
     },
     alternates: { canonical: `/blog/${post.slug}` },
