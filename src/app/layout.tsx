@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'Plumber',
   name: 'Emergency Plumbers',
   url: 'https://emergencyplumbers.live',
   telephone: PHONE,
@@ -34,7 +34,7 @@ const organizationJsonLd = {
     hoursAvailable: 'Mo-Su 00:00-23:59',
   },
   logo: 'https://emergencyplumbers.live/favicon.ico',
-  areaServed: { '@type': 'State', name: 'Tennessee' },
+  areaServed: { '@type': 'State', name: 'Tennessee', sameAs: 'https://en.wikipedia.org/wiki/Tennessee' },
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.9',
