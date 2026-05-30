@@ -64,10 +64,10 @@ export const HOME_TEAM: TeamMember[] = [
 ];
 
 export const HOME_PROJECTS: ProjectItem[] = [
-  { imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1800&q=80&fm=webp", imageAlt: "Pipe fitting and repair", title: "Full Kitchen Repipe", location: "Seattle, WA" },
-  { imageUrl: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1800&q=80&fm=webp", imageAlt: "Plumber working on pipes", title: "Master Bath Renovation", location: "Miami, FL" },
-  { imageUrl: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1800&q=80&fm=webp", imageAlt: "Drain hydro-jetting", title: "Main Line Hydro-Jet", location: "Denver, CO" },
-  { imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80&fm=webp", imageAlt: "Tankless water heater install", title: "Tankless Water Heater", location: "Chicago, IL" },
+  { imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1800&q=80&fm=webp", imageAlt: "Pipe fitting and repair", title: "Full Kitchen Repipe", location: "Nashville, TN" },
+  { imageUrl: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1800&q=80&fm=webp", imageAlt: "Plumber working on pipes", title: "Master Bath Renovation", location: "Brentwood, TN" },
+  { imageUrl: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1800&q=80&fm=webp", imageAlt: "Drain hydro-jetting", title: "Main Line Hydro-Jet", location: "Knoxville, TN" },
+  { imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80&fm=webp", imageAlt: "Tankless water heater install", title: "Tankless Water Heater", location: "Memphis, TN" },
 ];
 
 export const SERVICE_AREAS_TN = {
@@ -145,9 +145,9 @@ export const DRAIN_URGENCY: UrgencyItem[] = [
   { icon: "🏚️", title: "Water Damage Compounds Fast", description: "Slow drains can cause overflow, floor damage, and mold. 24 hours of standing water doubles remediation costs." },
 ];
 export const DRAIN_REVIEWS: ReviewItem[] = [
-  { text: '"Emergency Plumbers cleared our main line in under 2 hours. The camera inspection showed exactly where the root intrusion was. Fixed cleanly, no mess. 5 stars."', author: "Tom B.", location: "Phoenix, AZ" },
-  { text: '"Kitchen drain had been slow for months. They hydro-jetted it and it flows like new. Wish I had called sooner."', author: "Rachel H.", location: "Dallas, TX" },
-  { text: '"Professional, punctual, priced exactly what they quoted. Our whole drainage system was inspected and cleared in one visit."', author: "Marcus W.", location: "Denver, CO" },
+  { text: '"Emergency Plumbers cleared our main line in under 2 hours. The camera inspection showed exactly where the root intrusion was. Fixed cleanly, no mess. 5 stars."', author: "Tom B.", location: "Memphis, TN" },
+  { text: '"Kitchen drain had been slow for months. They hydro-jetted it and it flows like new. Wish I had called sooner."', author: "Rachel H.", location: "Knoxville, TN" },
+  { text: '"Professional, punctual, priced exactly what they quoted. Our whole drainage system was inspected and cleared in one visit."', author: "Marcus W.", location: "Chattanooga, TN" },
 ];
 
 // ── PIPE REPAIR ──
@@ -178,9 +178,9 @@ export const PIPE_URGENCY: UrgencyItem[] = [
   { icon: "🏚️", title: "Unrepaired Pipes Fail Completely", description: "Corroded or cracked pipes don't stabilize — they fail. A $400 repair today avoids a $5,000 emergency later." },
 ];
 export const PIPE_REVIEWS: ReviewItem[] = [
-  { text: '"They found our slab leak in 20 minutes using acoustic detection. Minimal concrete work, repaired in a day. Saved us from a full tear-out. Incredible."', author: "Patricia L.", location: "Houston, TX" },
-  { text: '"Burst pipe on a Saturday night. Plumber arrived in 50 minutes. Total professional. Damage was minimal because of how fast they responded."', author: "Kevin M.", location: "Chicago, IL" },
-  { text: '"Full repipe of our 1960s home. They worked around our schedule, kept everything tidy, and passed inspection on the first visit."', author: "Ann T.", location: "Boston, MA" },
+  { text: '"They found our slab leak in 20 minutes using acoustic detection. Minimal concrete work, repaired in a day. Saved us from a full tear-out. Incredible."', author: "Patricia L.", location: "Nashville, TN" },
+  { text: '"Burst pipe on a Saturday night. Plumber arrived in 50 minutes. Total professional. Damage was minimal because of how fast they responded."', author: "Kevin M.", location: "Franklin, TN" },
+  { text: '"Full repipe of our 1960s home. They worked around our schedule, kept everything tidy, and passed inspection on the first visit."', author: "Ann T.", location: "Murfreesboro, TN" },
 ];
 
 // ── WATER HEATER ──
@@ -212,8 +212,8 @@ export const WATER_HEATER_URGENCY: UrgencyItem[] = [
 ];
 export const WATER_HEATER_REVIEWS: ReviewItem[] = [
   { text: '"Called at 8 AM with no hot water. New tankless unit installed by 3 PM. The technician was knowledgeable, efficient, and genuinely kind. Best home service experience I\'ve had."', author: "Jennifer S.", location: "Nashville, TN" },
-  { text: '"Switched from tank to tankless. Emergency Plumbers handled the gas line upgrade, venting, and city permit all in one visit. Endless hot water now and my gas bill dropped 25%."', author: "Robert K.", location: "Atlanta, GA" },
-  { text: '"Fair quote, showed up on time, cleaned up after themselves. Water heater has worked perfectly for 8 months. Highly recommend."', author: "Diane F.", location: "Seattle, WA" },
+  { text: '"Switched from tank to tankless. Emergency Plumbers handled the gas line upgrade, venting, and city permit all in one visit. Endless hot water now and my gas bill dropped 25%."', author: "Robert K.", location: "Brentwood, TN" },
+  { text: '"Fair quote, showed up on time, cleaned up after themselves. Water heater has worked perfectly for 8 months. Highly recommend."', author: "Diane F.", location: "Clarksville, TN" },
 ];
 
 // ── EMERGENCY PLUMBING ──
@@ -244,9 +244,9 @@ export const EMERGENCY_URGENCY: UrgencyItem[] = [
   { icon: "💸", title: "Delay Multiplies Costs", description: "A $500 emergency repair called immediately often becomes a $5,000–$15,000 remediation project if you wait 24 hours." },
 ];
 export const EMERGENCY_REVIEWS: ReviewItem[] = [
-  { text: '"Pipe burst in my basement at 2 AM. Emergency Plumbers plumber was there in 55 minutes. Calm, professional, fixed it completely. I honestly don\'t know what I would have done without them."', author: "Mark J.", location: "Los Angeles, CA" },
-  { text: '"Sewage backed up on Thanksgiving. They came within an hour, cleared it, and sanitized the entire area. Family dinner was only delayed by 2 hours. Incredible response."', author: "Carla V.", location: "San Antonio, TX" },
-  { text: '"Gas smell late at night. Called Emergency Plumbers and they treated it as the emergency it was — arrived in 40 minutes, found the leak, made it safe. Real professionals."', author: "Brian N.", location: "Philadelphia, PA" },
+  { text: '"Pipe burst in my basement at 2 AM. Emergency Plumbers plumber was there in 55 minutes. Calm, professional, fixed it completely. I honestly don\'t know what I would have done without them."', author: "Mark J.", location: "Nashville, TN" },
+  { text: '"Sewage backed up on Thanksgiving. They came within an hour, cleared it, and sanitized the entire area. Family dinner was only delayed by 2 hours. Incredible response."', author: "Carla V.", location: "Knoxville, TN" },
+  { text: '"Gas smell late at night. Called Emergency Plumbers and they treated it as the emergency it was — arrived in 40 minutes, found the leak, made it safe. Real professionals."', author: "Brian N.", location: "Memphis, TN" },
 ];
 
 // ── PROCESS STEPS (shared) ──

@@ -9,6 +9,7 @@ import FloatingCallButton from '@/components/layout/FloatingCallButton';
 import ServiceCTA from '@/components/services/ServiceCTA';
 import { getCityBySlug, CITY_SLUGS } from '@/lib/cities';
 import { PHONE, PHONE_HREF } from '@/lib/constants';
+import { getHeroBlurb, getServicesHeadline, getFaqHeadline } from '@/lib/contentSpinner';
 
 export async function generateStaticParams() {
   return CITY_SLUGS.map(city => ({ city }));
@@ -67,7 +68,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
     priceRange: '$$',
     description: `Licensed plumber serving ${city.name}, ${city.stateAbbr} and surrounding areas of ${city.county}.`,
     areaServed: [
-      { '@type': 'City', name: city.name, containedInPlace: { '@type': 'State', name: city.state } },
+      { '@type': 'City', name: city.name, sameAs: `https://en.wikipedia.org/wiki/${city.name.replace(/'/g, '').replace(/ /g, '_')},_Tennessee`, containedInPlace: { '@type': 'State', name: city.state } },
       ...city.nearbyAreas.map(area => ({ '@type': 'City', name: area })),
     ],
     address: { '@type': 'PostalAddress', addressLocality: city.name, addressRegion: city.stateAbbr, postalCode: city.zipCodes[0], addressCountry: 'US' },
@@ -142,6 +143,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </h1>
 
           <p className="city-hero-sub">{city.heroSub}</p>
+          <p className="city-hero-desc" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.97rem', marginTop: '-8px', marginBottom: '16px', lineHeight: 1.7 }}>{getHeroBlurb(city)}</p>
 
           <div className="hero-trust-row" style={{ marginBottom: '28px' }}>
             {[{ icon: '⭐', text: '4.9/5 Google · 1,200+ Reviews' }, { icon: '🏅', text: 'Licensed & Insured' }, { icon: '✅', text: 'BBB Accredited' }].map(({ icon, text }, i, arr) => (
@@ -170,7 +172,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <span className="section-label">Our Services in {city.name}</span>
           <h2 className="section-title" style={{ marginTop: '8px' }}>
-            Every Plumbing Service.<br />One Phone Call.
+            {getServicesHeadline(city).split('\n').map((line, i) => (
+              <React.Fragment key={i}>{line}{i === 0 && <br />}</React.Fragment>
+            ))}
           </h2>
           <div className="services-list-grid" style={{ marginTop: '36px' }}>
             {SERVICES.map(({ icon, title, desc, href }) => (
@@ -208,7 +212,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <div style={{ maxWidth: '780px', margin: '0 auto' }}>
           <span className="section-label">FAQ</span>
           <h2 className="section-title" style={{ marginTop: '8px', marginBottom: '32px' }}>
-            Plumbing Questions About {city.name}
+            {getFaqHeadline(city)}
           </h2>
           {FAQS.map(({ q, a }) => (
             <div key={q} className="faq-item">
