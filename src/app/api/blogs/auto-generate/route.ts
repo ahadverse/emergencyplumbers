@@ -7,9 +7,10 @@ function slugify(title: string) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-const POSTS = [
+const POSTS: { title: string; coverImage: string; category: string; tags: string[]; excerpt: string; content: string }[] = [
   {
     title: '5 Signs Your Drain Needs Professional Cleaning Today',
+    coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&h=630',
     category: 'Drain Tips',
     tags: ['drain cleaning', 'clogged drain', 'warning signs'],
     excerpt: 'A slow drain is more than an annoyance — it\'s a warning. Our licensed plumbers explain 5 signs your drain needs professional attention before it becomes an emergency.',
@@ -32,6 +33,7 @@ const POSTS = [
   },
   {
     title: 'How to Know If You Have a Slab Leak (And What Happens If You Ignore It)',
+    coverImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&h=630',
     category: 'Pipe Maintenance',
     tags: ['slab leak', 'leak detection', 'pipe repair'],
     excerpt: 'Slab leaks are invisible until the damage is severe. Our licensed plumbers explain the warning signs, the detection process, and why early action is critical.',
@@ -55,6 +57,7 @@ const POSTS = [
   },
   {
     title: 'Water Heater Making Noise? Here\'s What Each Sound Means',
+    coverImage: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&h=630',
     category: 'Water Heater',
     tags: ['water heater repair', 'water heater maintenance', 'water heater noise'],
     excerpt: 'Popping, rumbling, hissing, or whining — your water heater is trying to tell you something. Our certified technicians decode every noise and explain when it needs attention.',
@@ -81,6 +84,7 @@ const POSTS = [
   },
   {
     title: 'The 7 Plumbing Checks Every Homeowner Should Do Twice a Year',
+    coverImage: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&h=630',
     category: 'General',
     tags: ['plumbing maintenance', 'home maintenance', 'preventive plumbing'],
     excerpt: 'Two 30-minute inspections per year can prevent 80% of common plumbing emergencies. Our licensed plumbers share the exact checklist they use.',
@@ -106,6 +110,7 @@ const POSTS = [
   },
   {
     title: 'Why DIY Plumbing Repairs Can Cost You More in the Long Run',
+    coverImage: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&h=630',
     category: 'General',
     tags: ['DIY plumbing', 'plumbing mistakes', 'licensed plumber'],
     excerpt: 'YouTube makes plumbing look easy. But the #1 cause of expensive plumbing emergencies is a DIY repair gone wrong. Here\'s what our licensed plumbers see most often.',
@@ -145,6 +150,7 @@ export async function POST() {
       title: post.title,
       excerpt: post.excerpt,
       content: post.content,
+      coverImage: post.coverImage,
       category: post.category,
       tags: post.tags,
       status: 'published',

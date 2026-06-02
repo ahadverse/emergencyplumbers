@@ -189,13 +189,6 @@ export default function Navigation({ variant, activeHref }: Props) {
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <a
             href={PHONE_HREF}
-            className='nav-phone'
-            onClick={() => trackEvent("call_click")}
-          >
-            📞 {PHONE}
-          </a>
-          <a
-            href={PHONE_HREF}
             className='nav-cta'
             onClick={() => trackEvent("call_click")}
           >

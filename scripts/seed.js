@@ -57,6 +57,7 @@ async function main() {
     {
       slug: '10-signs-you-need-a-plumber',
       title: '10 Signs You Need a Plumber Before It Becomes an Emergency',
+      coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&h=630',
       category: 'General',
       tags: ['plumbing tips', 'prevention', 'warning signs'],
       excerpt: 'Ignoring these 10 warning signs could turn a $200 repair into a $5,000 emergency. Our licensed plumbers explain what to watch for.',
@@ -65,6 +66,7 @@ async function main() {
     {
       slug: 'how-to-prevent-frozen-pipes',
       title: 'How to Prevent Frozen Pipes This Winter',
+      coverImage: 'https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&w=1200&h=630',
       category: 'Pipe Maintenance',
       tags: ['winter plumbing', 'frozen pipes', 'pipe maintenance'],
       excerpt: 'A burst pipe from freezing can release 100+ gallons per hour. Our plumbers share the exact steps to prevent it — and what to do if it\'s too late.',
@@ -73,6 +75,7 @@ async function main() {
     {
       slug: 'tankless-vs-tank-water-heater',
       title: 'Tankless vs. Tank Water Heater: Which Is Right for Your Home?',
+      coverImage: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&h=630',
       category: 'Water Heater',
       tags: ['water heater', 'tankless', 'energy efficiency'],
       excerpt: 'The right choice depends on your household size, hot water demand, and budget. Our certified water heater technicians break it down.',
@@ -81,6 +84,7 @@ async function main() {
     {
       slug: '5-reasons-drain-keeps-clogging',
       title: '5 Reasons Your Drain Keeps Clogging (And How to Fix Them)',
+      coverImage: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1200&h=630',
       category: 'Drain Tips',
       tags: ['drain cleaning', 'clogged drain', 'plumbing tips'],
       excerpt: 'If your drain keeps clogging after you clear it, something deeper is wrong. Our plumbers explain the 5 most common causes and the permanent fix for each.',
@@ -89,6 +93,7 @@ async function main() {
     {
       slug: 'how-to-shut-off-home-water',
       title: 'How to Shut Off Your Home\'s Water in an Emergency',
+      coverImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&h=630',
       category: 'Emergency Plumbing',
       tags: ['emergency plumbing', 'water shutoff', 'burst pipe'],
       excerpt: 'Every homeowner should know where their water shutoff is. Find it before you need it — this guide shows you where to look and how to use it.',
@@ -97,6 +102,7 @@ async function main() {
     {
       slug: 'why-you-should-never-ignore-dripping-faucet',
       title: 'Why You Should Never Ignore a Dripping Faucet',
+      coverImage: 'https://images.unsplash.com/photo-1527664795448-e2f1a3fcb4b1?auto=format&fit=crop&w=1200&h=630',
       category: 'Pipe Maintenance',
       tags: ['faucet repair', 'water waste', 'plumbing maintenance'],
       excerpt: 'A single dripping faucet can waste 3,000+ gallons of water per year and cost you $200 in utility bills. Here\'s why — and the fix.',
@@ -105,6 +111,7 @@ async function main() {
     {
       slug: 'hydro-jetting-vs-snaking',
       title: 'Hydro-Jetting vs. Snaking: What\'s the Difference?',
+      coverImage: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&h=630',
       category: 'Drain Tips',
       tags: ['hydro-jetting', 'drain cleaning', 'drain snake'],
       excerpt: 'Both clear clogs, but only one actually cleans your pipes. Our licensed drain specialists explain when to use each method.',
@@ -113,6 +120,7 @@ async function main() {
     {
       slug: 'complete-guide-water-heater-maintenance',
       title: 'The Complete Guide to Water Heater Maintenance',
+      coverImage: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1200&h=630',
       category: 'Water Heater',
       tags: ['water heater maintenance', 'anode rod', 'water heater tips'],
       excerpt: 'Regular maintenance can extend your water heater\'s life by 5–7 years. Our certified technicians explain exactly what to check and how often.',
@@ -121,6 +129,7 @@ async function main() {
     {
       slug: 'how-to-detect-hidden-pipe-leak',
       title: 'How to Detect a Hidden Pipe Leak Before It Causes Damage',
+      coverImage: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&h=630',
       category: 'Pipe Maintenance',
       tags: ['leak detection', 'hidden leak', 'pipe maintenance'],
       excerpt: 'Hidden leaks can go undetected for months while causing thousands in damage. Here\'s how to catch them early using simple checks any homeowner can do.',
@@ -129,6 +138,7 @@ async function main() {
     {
       slug: 'what-to-do-burst-pipe',
       title: 'What to Do When You Have a Burst Pipe',
+      coverImage: 'https://images.unsplash.com/photo-1612532625007-7891882a81f0?auto=format&fit=crop&w=1200&h=630',
       category: 'Emergency Plumbing',
       tags: ['burst pipe', 'emergency plumbing', 'water damage'],
       excerpt: 'A burst pipe releases 100+ gallons per hour. Every minute counts. Follow these exact steps to minimize damage before the plumber arrives.',
@@ -136,13 +146,12 @@ async function main() {
     },
   ];
 
+  const deleted = await BlogPost.deleteMany({});
+  console.log(`🗑️   Deleted ${deleted.deletedCount} existing blog posts`);
+
   let created = 0;
-  let skipped = 0;
 
   for (const post of posts) {
-    const existing = await BlogPost.findOne({ slug: post.slug });
-    if (existing) { skipped++; continue; }
-
     const daysAgo = Math.floor(Math.random() * 90) + 1;
     const publishedAt = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000);
     const viewCount = Math.floor(Math.random() * 120);
@@ -152,7 +161,7 @@ async function main() {
     console.log(`  ✅  "${post.title}"`);
   }
 
-  console.log(`\n✅  Done! ${created} posts created, ${skipped} skipped (already exist).`);
+  console.log(`\n✅  Done! ${created} posts created.`);
   console.log('\n📋  Next steps:');
   console.log('   1. cd flowpro && npm install');
   console.log('   2. npm run dev  (runs on http://localhost:3000)');
